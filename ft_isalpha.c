@@ -10,4 +10,5 @@ int ft_isalpha(char *str)
         i++;
     }
     return (1);
+    kjhkj
 }
