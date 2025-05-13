@@ -10,7 +10,4 @@ int ft_isalpha()
         i++;
     }
     return (1);
-    
-    
-    NOOONONONNO
 }
