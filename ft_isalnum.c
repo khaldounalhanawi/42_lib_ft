@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	return ((c >= '0' && c <= '9')
 		|| (c >= 'A' && c <= 'Z')
@@ -21,7 +21,7 @@ int	ft_isalnum(char c)
 #include <ctype.h>
 int	main()
 {	
-	char a = ']';
+	char a = 'p';
 
 	printf("my %d\n", ft_isalnum(a));
 	printf("default %d\n", isalnum(a));
