@@ -1,14 +1,19 @@
-int ft_isalpha(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 13:10:04 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/13 13:10:26 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isalpha(int str)
 {
-    int i;
-    
-    i = 0;
-    while (str[i])
-    {
-        if ((str[i] < 'a' && str[i] > 'Z') || (str[i] < 'A') || (str[i] > 'z')) 
-        	return (0);
-        i++;
-    }
-    return (1);
-    kjhkj
+	if ((str < 'a' && str > 'Z') || (str < 'A') || (str > 'z'))
+		return (0);
+	else
+		return (1);
 }
