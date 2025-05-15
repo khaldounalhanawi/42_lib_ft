@@ -1,18 +1,29 @@
 #include <stddef.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char *p;
 	const unsigned char *j;
 
-
 	p = (unsigned char *)dst;
 	j = (const unsigned char *)src;
-	while (n)
+	if (dst < src)
 	{
-		*p++ = *j;
-		j++;
-		n--;
+		while (len)
+		{
+			*p++ = *j;
+			j++;
+			len--;
+		}
+	}
+	else
+	{
+		p += len;
+		j += len;
+		while (len--)
+		{
+			*--p = *--j;
+		}
 	}
 	return (dst);
 }
@@ -24,18 +35,18 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 int	main()
 {
  	char src[] = "khaldoun";
- 	char dst[] = "xyz";
+ 	char dst[] = "123xyz";
 
  	char srcD[] = "khaldoun";
- 	char dstD[] = "xyz";
+ 	char dstD[] = "123xyz";
 
  	char *a;
  	char *b;
 
- 	int num = 1;
+ 	int num = 4;
 
- 	a = (char *)ft_memcpy(dst, src, num);
- 	b = (char *)memcpy(dstD, srcD, num);
+ 	a = (char *)ft_memmove(&dst[2], dst, num);
+ 	b = (char *)memmove(&dstD[2], dstD, num);
 
  	printf("my:      %s\n", dst);
  	printf("default: %s\n", dstD);
