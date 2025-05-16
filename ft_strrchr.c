@@ -1,0 +1,36 @@
+#include <stddef.h>
+
+char	*ft_strrchr(const char *s, int c)
+{
+	const char *start;
+
+	start = s;
+	while (*s)
+		s++;
+	while (s != start)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s--;
+	}
+	if (*s == c)
+			return ((char *)s);
+	return (NULL);
+}
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char txt[] = "hakldkoakun";
+	// char txt[] = {'k', 'h','a', '\0', 'a'};
+	char c = 'k';
+
+	printf("my :      %s\n", ft_strrchr(txt,c));
+	printf("default : %s\n", strrchr(txt,c));
+
+
+
+}*/
