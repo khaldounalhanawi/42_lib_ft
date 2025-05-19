@@ -1,27 +1,28 @@
-
 #include <stddef.h>
 
-int full_match(const char *haystack, const char *needle)
+int full_match(const char *haystack, const char *needle, size_t len)
 {
 	while (*needle)
 	{
-		if (*needle != *haystack || !*haystack)
+		if (*needle != *haystack || !*haystack || !len)
 			return (0);
 		needle++;
 		haystack++;
+		len--;
 	}
 	return (1);
 }
 
-char *ft_strstr(const char *haystack, const char *needle)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	if (*needle == '\0')
 		return((char *)haystack);
-	while (*haystack)
+	while (*haystack && len)
 	{
-		if (*haystack == *needle && full_match(haystack, needle))
+		if (*haystack == *needle && full_match(haystack, needle, len))
 			return ((char *)haystack);
 		haystack++;
+		len--;
 	}
 	return (NULL);
 }
@@ -31,11 +32,12 @@ char *ft_strstr(const char *haystack, const char *needle)
 
 int	main()
 {
-	char a[] = "ld";
-	char b[] = "ldo";
+	char a[] = "khaldoun";
+	char b[] = "ld";
+	size_t len = 6;
 
-	printf("my:         %s\n", ft_strstr(a, b));
-	printf("default:    %s\n", strstr(a, b));
+	printf("my:         %s\n", ft_strnstr(a, b, len));
+	printf("default:    %s\n", strnstr(a, b, len));
 
 
 }*/
