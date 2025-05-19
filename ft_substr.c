@@ -1,47 +1,40 @@
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
-	char	*p;
-	char	*record;
-	int	len;
+	size_t num;
 
-	len = 0;
-	while (s1[len])
-		len++;
-	p = malloc((len + 1) * (size_t)sizeof(char));
-	if (!p)
-		return (NULL);
-	record = p;
-	while (*s1)
-		*p++ = *s1++;
-	*p = '\0';
-	return (record);
+	num = 0;
+	while (src[num])
+		num++;
+	if (dstsize)
+	{	
+		while (--dstsize && *src)
+			*dst++ = *src++;
+		*dst = '\0';
+	}
+	return (num);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *p;
+	char	*p;
 
-	p = ft_strdup(&s[start]);
-
+	p = malloc((len + 1) * sizeof(unsigned char));
+	if (!p)
+		return (NULL);
+	ft_strlcpy(p, &s[start], len + 1);
 	return(p);
-
 }
-
+/*
 #include <stdio.h>
 
 int main()
 {
 
-	char s[] = "khaldoun";
-	int pos = 3;
-	size_t len = 3;
+	char s[] = "hello world!";
+	int pos = 98;
+	size_t len = 6;
 
 	printf("%s\n", ft_substr(s,pos,len));
-
-
-
-
-
-}
+}*/
