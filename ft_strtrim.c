@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 int	isin(char a, char *b)
@@ -19,6 +18,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	char	*p;
 
 	len = 0;
+	if (*s1 == '\0')
+		return ((char *)s1);
 	record = (char *)s1;
 	while (*s1)
 	{
@@ -28,6 +29,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 	s1 = record;
 	p = malloc ((len + 1) * sizeof(char));
+	if (!p)
+		return (NULL);
 	record = p;
 	while (*s1)
 	{
@@ -38,17 +41,16 @@ char *ft_strtrim(char const *s1, char const *set)
 	*p = '\0';
 	return (record);
 }
-
+/* 
 #include <stdio.h>
 
 int main()
 {
-	char s1[] = "kz2Hkelklkzo jmjokfzo!";
-	char s2[] = "jzk";
+	char s1[] = "Hgelzloa gUgfzok!";
+	char s2[] = "zgak";
 
 	printf("%s\n", ft_strtrim(s1, s2));
-
-
+	printf("\n\n\n****");
 
 	return (0);
-}
+} */
