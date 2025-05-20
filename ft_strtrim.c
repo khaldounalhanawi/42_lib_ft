@@ -11,23 +11,30 @@ int	isin(char a, char *b)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+int len_trimmed(char const *s1, char const *set)
 {
-	int len;
-	char	*record;
-	char	*p;
+	int     len;
 
-	len = 0;
-	if (*s1 == '\0')
-		return ((char *)s1);
-	record = (char *)s1;
-	while (*s1)
+    len = 0;
+    while (*s1)
 	{
 		if (!isin(*s1,(char *)set))
 			len++;
 		s1++;
 	}
-	s1 = record;
+    return (len);
+}
+
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	int		len;
+	char	*record;
+	char	*p;
+
+	if (*s1 == '\0')
+		return ((char *)s1);
+    len = len_trimmed(s1, set);
 	p = malloc ((len + 1) * sizeof(char));
 	if (!p)
 		return (NULL);
