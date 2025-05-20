@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:29:06 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:31:40 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
-	unsigned char *v;
-	size_t all_bytes;
+	void			*p;
+	unsigned char	*v;
+	size_t			all_bytes;
 
 	if (count == 0 || size == 0)
 		return (malloc(1));
@@ -20,7 +32,7 @@ void	*ft_calloc(size_t count, size_t size)
 		*v = 0;
 		v++;
 	}
-	return(p);
+	return (p);
 }
 /*
 #include <stdio.h>

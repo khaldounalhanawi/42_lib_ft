@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:43:32 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:44:37 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t num;
-	size_t num_src;
+	size_t	num;
+	size_t	num_src;
 
 	num = 0;
 	num_src = 0;
-	while(dst[num])
+	while (dst[num])
 		num++;
-	while(src[num_src])
+	while (src[num_src])
 		num_src++;
 	if (dstsize > num)
 	{

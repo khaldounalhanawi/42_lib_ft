@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:51:39 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:54:14 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	isin(char a, char *b)
@@ -11,22 +23,21 @@ int	isin(char a, char *b)
 	return (0);
 }
 
-int len_trimmed(char const *s1, char const *set)
+int	len_trimmed(char const *s1, char const *set)
 {
-	int     len;
+	int	len;
 
-    len = 0;
-    while (*s1)
+	len = 0;
+	while (*s1)
 	{
-		if (!isin(*s1,(char *)set))
+		if (!isin(*s1, (char *) set))
 			len++;
 		s1++;
 	}
-    return (len);
+	return (len);
 }
 
-
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		len;
 	char	*record;
@@ -34,14 +45,14 @@ char *ft_strtrim(char const *s1, char const *set)
 
 	if (*s1 == '\0')
 		return ((char *)s1);
-    len = len_trimmed(s1, set);
+	len = len_trimmed(s1, set);
 	p = malloc ((len + 1) * sizeof(char));
 	if (!p)
 		return (NULL);
 	record = p;
 	while (*s1)
 	{
-		if (!isin(*s1,(char *)set))
+		if (!isin(*s1, (char *) set))
 			*p++ = *s1;
 		s1++;
 	}

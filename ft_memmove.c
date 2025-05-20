@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:37:33 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:37:47 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *p;
-	const unsigned char *j;
+	unsigned char		*p;
+	const unsigned char	*j;
 
 	p = (unsigned char *)dst;
 	j = (const unsigned char *)src;

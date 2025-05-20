@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:40:46 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:42:49 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-char *ft_strjoin(char const *s1, char const *s2)
-{	
-	int	len1;
-	int len2;
-	int	len_total;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		len1;
+	int		len2;
+	int		len_total;
 	char	*p;
 	char	*original;
 

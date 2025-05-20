@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:49:04 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:49:44 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-int full_match(const char *haystack, const char *needle, size_t len)
+int	full_match(const char *haystack, const char *needle, size_t len)
 {
 	while (*needle)
 	{
@@ -13,10 +25,10 @@ int full_match(const char *haystack, const char *needle, size_t len)
 	return (1);
 }
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	if (*needle == '\0')
-		return((char *)haystack);
+		return ((char *)haystack);
 	while (*haystack && len)
 	{
 		if (*haystack == *needle && full_match(haystack, needle, len))

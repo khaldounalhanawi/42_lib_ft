@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:50:24 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:50:47 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *start;
+	const char	*start;
 
 	start = s;
 	while (*s)
@@ -14,7 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 		s--;
 	}
 	if (*s == c)
-			return ((char *)s);
+		return ((char *)s);
 	return (NULL);
 }
 /*

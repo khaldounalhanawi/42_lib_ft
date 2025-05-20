@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:36:13 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:36:56 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	unsigned char *p;
-	const unsigned char *j;
-
+	unsigned char		*p;
+	const unsigned char	*j;
 
 	p = (unsigned char *)dst;
 	j = (const unsigned char *)src;

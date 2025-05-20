@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:38:13 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:38:30 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)b;
 	while (len)

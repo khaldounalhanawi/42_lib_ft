@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr***.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/20 15:56:10 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/20 15:57:17 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t num;
+	size_t	num;
 
 	num = 0;
 	while (src[num])
 		num++;
 	if (dstsize)
-	{	
+	{
 		while (--dstsize && *src)
 			*dst++ = *src++;
 		*dst = '\0';
@@ -19,8 +31,8 @@ size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
-	int	s_len;
-	int	s2_len;
+	int		s_len;
+	int		s2_len;
 
 	s_len = 0;
 	while (s[s_len])
@@ -32,7 +44,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!p)
 		return (NULL);
 	ft_strlcpy(p, &s[start], s2_len + 1);
-	return(p);
+	return (p);
 }
 /*
 #include <stdio.h>
