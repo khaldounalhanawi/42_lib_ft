@@ -29,67 +29,106 @@ int	get_next(char const *s, char c)
 	return (i);
 }
 
-int freq_cal(char const *s, char c)
+int	word_count(char const *s, char c)
 {
-	int	freq;
+	int	i;
+	int counter;
+	int len;
 
-	freq = 0;
-	while (*s)
+	i = 0;
+	counter = 0;
+	len = 0;
+	while (s[len])
+		len++;
+	if (s[0] != c)
+		counter++;
+	if (s[0] == '\0')
+		return (0);
+	while (s[i] && i < len - 1)
 	{
-		if (*s == c)
-			freq++;
-		s++;
+		if (s[i] == c && s[i + 1] != c)
+			counter++;
+		i++;
 	}
-	return (freq);
+	return (counter);
+}
+
+int	filler(char **origin, char **p, const char *s, int local_len)
+{
+	int	i;
+	
+	*p = malloc ((local_len + 1) * sizeof(char));
+	if (!*p)
+	{
+		i = 0;
+		while (origin[i])
+		{
+			free(origin[i]);
+			i++;
+		}
+		free(origin);
+		return (0);
+	}
+	ft_strlcpy(*p, s, local_len + 1);
+	return (1);
 }
 
 char **ft_split(char const *s, char c)
 {
-	int		freq;
-	int		local_len;
-	char **p;
-	char **origin;
-	
-	freq = freq_cal(s, c);
-	if (!freq )
+	int		words;
+	char	**p;
+	char	**origin;
+
+	if (!s || *s == '\0')
 		return (NULL);
-	freq += 2;
-	p = malloc ((freq) * sizeof (char *));
+	words = word_count(s, c);
+	p = malloc ((words + 1) * sizeof (char *));
 	if (!p)
 		return (NULL);
 	origin = p;
-	while (--freq)
+	while (words--)
 	{
-		local_len = get_next(s, c);
-		*p = malloc ((local_len + 1) * sizeof(char));
-		if (!(*p))
+		while (*s == c && *s) 
+			s++;
+		if (!filler (origin, p, s, get_next(s, c)))
 			return (NULL);
-		ft_strlcpy(*p, s, local_len + 1); 
-		s += local_len + 1;
+		s += get_next(s, c);
 		p++;
 	}
 	*p = NULL;
     return (origin);
 }
-
+/*
 #include <stdio.h>
 
 int main ()
 {
-    char s[] = "hey there how are you";
+    char s[] = "    hey there        how are you       ";
     char c = ' ';
 
-    // char s[] = "hey there how are you";
+    // char s[] = "hhey there";
+    // char c = 'h';
+
+    // char s[] = "xxxxxxxxxxxxheyxxxxtherexxxxx";
+    // char c = 'x';
+
+    // char s[] = "       hey there";
+    // char c = ' ';
+
+    // char s[] = "e"; //**** 	QUESTION?! empty string?? should?
     // char c = 'e';
 
     // char s[] = "  ";
     // char c = 'e';
 
-    // char s[] = "";
+    // char s[] = ""; 
     // char c = 'e';
 
-    // char s[] = "hey there i am";
-    // char c = 'f';
+    // char s[] = ",,hey,,,,how,are,things?,";
+    // char c = ',';
+
+    // char s[] = "hÉy thÉre i am"; // **** ASK
+    // char c = 'É';
 
     char **k = ft_split(s, c);
 
@@ -107,3 +146,4 @@ int main ()
 
 
 }
+*/
