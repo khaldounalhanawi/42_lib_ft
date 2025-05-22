@@ -26,7 +26,6 @@ void devider_cal (int *devider, long m, int *size)
 
 	p_devider = devider;
 	p_size = size;
-	// *p_size = 2;
 	*p_devider = 1;
 	while (*p_devider <= m/10)
 	{
@@ -64,12 +63,12 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int main ()
 {
-	// int a = INT_MIN;
+	int a = INT_MIN;
 	// int a = 0;
 	// int a = 10;
 	// int a = INT_MAX;
 	// int a = -5;
-	int a = -10;
+	// int a = -10;
 
 	printf("%s\n", ft_itoa(a));
 }*/
