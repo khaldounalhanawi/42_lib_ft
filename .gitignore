@@ -2,3 +2,4 @@
 !*.c
 temp.c
 !Makefile
+!libft.h
