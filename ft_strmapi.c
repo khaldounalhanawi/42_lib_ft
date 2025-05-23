@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int	str_len(char const *s)
+static int	str_len(char const *s)
 {
 	int	i;
 

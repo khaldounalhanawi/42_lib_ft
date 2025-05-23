@@ -1,11 +1,11 @@
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+static void ft_putchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }
 
-int devider_cal (long m)
+static int devider_cal (long m)
 {
 	int devider;
 

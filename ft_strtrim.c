@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	isin(char a, char *b)
+static int	isin(char a, char *b)
 {
 	while (*b)
 	{
@@ -23,7 +23,7 @@ int	isin(char a, char *b)
 	return (0);
 }
 
-int	len_trimmed(char const *s1, char const *set)
+static int	len_trimmed(char const *s1, char const *set)
 {
 	int	len;
 

@@ -1,4 +1,4 @@
-int	str_len(char *s)
+static int	str_len(char *s)
 {
 	int	i;
 

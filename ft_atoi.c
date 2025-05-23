@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	minus_check(const char **str)
+static int	minus_check(const char **str)
 {
 	if (**str == '-')
 	{

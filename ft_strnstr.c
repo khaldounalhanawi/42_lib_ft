@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-int	full_match(const char *haystack, const char *needle, size_t len)
+static int	full_match(const char *haystack, const char *needle, size_t len)
 {
 	while (*needle)
 	{

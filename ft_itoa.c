@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void cnvrt (char *str, int minus, long m, int devider)
+static void cnvrt (char *str, int minus, long m, int devider)
 {
 	if (minus)
 	{
@@ -19,7 +19,7 @@ void cnvrt (char *str, int minus, long m, int devider)
 	*str = '\0';
 }
 
-void devider_cal (int *devider, long m, int *size)
+static void devider_cal (int *devider, long m, int *size)
 {
 	int 	*p_devider;
 	int 	*p_size;

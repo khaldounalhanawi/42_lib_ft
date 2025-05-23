@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+static size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	num;
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	return (num);
 }
 
-int	get_next(char const *s, char c)
+static int	get_next(char const *s, char c)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	get_next(char const *s, char c)
 	return (i);
 }
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	i;
 	int counter;
@@ -53,7 +53,7 @@ int	word_count(char const *s, char c)
 	return (counter);
 }
 
-int	filler(char **origin, char **p, const char *s, int local_len)
+static int	filler(char **origin, char **p, const char *s, int local_len)
 {
 	int	i;
 	
