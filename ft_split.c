@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 12:23:19 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/24 12:25:24 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-static size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	num;
 
@@ -32,8 +44,8 @@ static int	get_next(char const *s, char c)
 static int	word_count(char const *s, char c)
 {
 	int	i;
-	int counter;
-	int len;
+	int	counter;
+	int	len;
 
 	i = 0;
 	counter = 0;
@@ -56,7 +68,7 @@ static int	word_count(char const *s, char c)
 static int	filler(char **origin, char **p, const char *s, int local_len)
 {
 	int	i;
-	
+
 	*p = malloc ((local_len + 1) * sizeof(char));
 	if (!*p)
 	{
@@ -73,7 +85,7 @@ static int	filler(char **origin, char **p, const char *s, int local_len)
 	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		words;
 	char	**p;
@@ -96,7 +108,7 @@ char **ft_split(char const *s, char c)
 		p++;
 	}
 	*p = NULL;
-    return (origin);
+	return (origin);
 }
 /*
 #include <stdio.h>

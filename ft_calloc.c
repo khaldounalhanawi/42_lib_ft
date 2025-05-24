@@ -6,11 +6,12 @@
 /*   By: kalhanaw <kalhanaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:29:06 by kalhanaw          #+#    #+#             */
-/*   Updated: 2025/05/20 15:31:40 by kalhanaw         ###   ########.fr       */
+/*   Updated: 2025/05/24 12:16:48 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -20,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 		return (malloc(1));
-	if (count != 0 && size > SIZE_MAX / count)
+	if (count != 0 && size > INT_MAX / count)
 		return (NULL);
 	all_bytes = count * size;
 	p = malloc(all_bytes);
@@ -34,9 +35,9 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return (p);
 }
-/*
+/* 
 #include <stdio.h>
-#include <limits.h>
+
 
 int main()
 {
@@ -74,4 +75,5 @@ int main()
 	free(start_a);
 	free(start_b);
 	return (0);
-}*/
+}
+ */

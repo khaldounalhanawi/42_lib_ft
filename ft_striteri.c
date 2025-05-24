@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 12:40:56 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/24 12:41:23 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 static int	str_len(char *s)
 {
 	int	i;
@@ -8,16 +20,16 @@ static int	str_len(char *s)
 	return (i);
 }
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	len;
 	unsigned int	counter;
 
 	if (!s || !f)
-		return;
+		return ;
 	len = (unsigned int) str_len (s);
 	if (len == 0)
-		return;
+		return ;
 	counter = 0;
 	while (counter < len)
 	{

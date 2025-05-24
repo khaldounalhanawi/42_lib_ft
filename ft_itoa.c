@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 12:34:49 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/24 12:38:16 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-static void cnvrt (char *str, int minus, long m, int devider)
+static void	cnvrt(char *str, int minus, long m, int devider)
 {
 	if (minus)
 	{
@@ -19,15 +31,15 @@ static void cnvrt (char *str, int minus, long m, int devider)
 	*str = '\0';
 }
 
-static void devider_cal (int *devider, long m, int *size)
+static void	devider_cal(int *devider, long m, int *size)
 {
-	int 	*p_devider;
-	int 	*p_size;
+	int	*p_devider;
+	int	*p_size;
 
 	p_devider = devider;
 	p_size = size;
 	*p_devider = 1;
-	while (*p_devider <= m/10)
+	while (*p_devider <= m / 10)
 	{
 		*p_devider *= 10;
 		(*p_size)++;
@@ -40,7 +52,7 @@ char	*ft_itoa(int n)
 	int		size;
 	int		minus;
 	char	*str;
-	long 	m;
+	long	m;
 
 	m = (long) n;
 	minus = 0;
@@ -56,7 +68,7 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	cnvrt(str, minus, m, devider);
-	return(str);
+	return (str);
 }
 /*
 #include <limits.h>
