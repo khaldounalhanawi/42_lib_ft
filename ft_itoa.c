@@ -19,7 +19,7 @@ static void	cnvrt(char *str, int minus, long m, int devider)
 		*str = '-';
 		str++;
 	}
-	while (m >= 10)
+	while (devider >= 10)
 	{
 		*str = (m / devider) + '0';
 		m %= devider;
@@ -63,6 +63,7 @@ char	*ft_itoa(int n)
 		minus = 1;
 		size++;
 	}
+	devider = 0;
 	devider_cal (&devider, m, &size);
 	str = malloc ((size + 1) * sizeof (char));
 	if (!str)
@@ -75,12 +76,13 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int main ()
 {
-	int a = INT_MIN;
+	//int a = INT_MIN;
 	// int a = 0;
 	// int a = 10;
 	// int a = INT_MAX;
 	// int a = -5;
 	// int a = -10;
+	int a = -104;
 
 	printf("%s\n", ft_itoa(a));
 }*/

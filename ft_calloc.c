@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			all_bytes;
 
 	if (count == 0 || size == 0)
-		return (malloc(1));
+		return (NULL);
 	if (count != 0 && size > INT_MAX / count)
 		return (NULL);
 	all_bytes = count * size;
@@ -35,15 +35,15 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return (p);
 }
-/* 
+/*
 #include <stdio.h>
 
 
 int main()
 {
 	// size_t size = 0;
-	size_t size = sizeof(int);
-	size_t count = 3;
+	size_t size = 0;
+	size_t count = 10;
 
 	int *a = ft_calloc(count,size);
 	int *b = calloc(count,size);

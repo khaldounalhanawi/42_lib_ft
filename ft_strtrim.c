@@ -42,9 +42,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	char	*record;
 	char	*p;
+	char	*empty;
 
-	if (*s1 == '\0')
-		return ((char *)s1);
+	if (*s1 == '\0' && *set == '\0')
+	{
+		empty = malloc (sizeof (char));
+		if (!empty)
+			return (NULL);
+		*empty = '\0';	
+		return (empty);
+	}
 	len = len_trimmed(s1, set);
 	p = malloc ((len + 1) * sizeof(char));
 	if (!p)
@@ -64,11 +71,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int main()
 {
-	char s1[] = "Hgelzloa gUgfzok!";
-	char s2[] = "zgak";
+	//char s1[] = "Hgelzloa gUgfzok!";
+	//char s2[] = "zgak";
+	
+	char s1[] = "";
+	char s2[] = "";
 
 	printf("%s\n", ft_strtrim(s1, s2));
-	printf("\n\n\n****");
+	//printf("\n\n\n****");
 
 	return (0);
-} */
+}*/

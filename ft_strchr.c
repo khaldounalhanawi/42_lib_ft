@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: kalhanaw <kalhanaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:38:59 by kalhanaw          #+#    #+#             */
-/*   Updated: 2025/05/20 15:39:00 by kalhanaw         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:57:20 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,39 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == '\0')
+	char	ch;
+
+	ch = (char) c;
+	if (ch == '\0')
 	{
-		while (*s != c)
+		while (*s != ch)
 			s++;
 		return ((char *)s);
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == ch)
 			return ((char *)s);
 		s++;
 	}
 	return (NULL);
 }
-/*
+/* 
 
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	char txt[] = "khaldoun";
+	char txt[] = "teste";
+	char txt2[] = "teste";
 	// char txt[] = {'k', 'h','a', '\0', 'a'};
-	char c = 'f';
+	char c = 'e';
 
-	printf("my :      %s\n", ft_strchr(txt,c));
-	printf("default : %s\n", strchr(txt,c));
+	printf("my :      %p, %s, %p\n", txt, ft_strchr(txt,c), ft_strchr(txt,c));
+	printf("default : %p, %s, %p\n", txt2,strchr(txt2,c), strchr(txt2,c));
 
 
 
-}*/
+}
+ */

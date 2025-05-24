@@ -10,43 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	minus_check(const char **str)
-{
-	if (**str == '-')
-	{
-		*str = *str + 1;
-		return (-1);
-	}
-	else
-		return (1);
-}
-
 int	ft_atoi(const char *str)
 {
-	long	val;
-	int		len;
-	int		multiply;
-	int		sign;
+	int	val;
+	int	sign;
 
-	sign = minus_check(&str);
-	len = 0;
-	while ((str[len] && str[len] >= '0' && str[len] <= '9') 
-		|| str[len] == ' ' || str[len] == '+'
-		|| (str[len] >= 9 && str[len] <= 13))
-		len++;
-	multiply = 1;
-	val = 0;
-	while (len--)
+	sign = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == 45 || *str == 43)
 	{
-		if (str[len] >= '0' && str[len] <= '9')
-		{
-			val += (str[len] - '0') * multiply;
-			multiply *= 10;
-		}
+		if (*str == 45)
+			sign = -1;
+		str++;
 	}
-	return ((int)val * sign);
+	val = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		val = (val * 10) + (*str - '0');
+		str++;
+	}
+	return (val * sign);
 }
-/* 
+/*
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -54,7 +40,7 @@ int main()
 {
 	int i = 0;
 	// char a[] = "43b3";
-	char *a[] = {"-433","","34","b","45b",
+	char *a[] = {"-+433","","-a34","b","-45b",
 		"+43b9","-43b9","é4","  0990","\t005",
 		"020b","2147483647","-2147483648"};
 
@@ -65,4 +51,4 @@ int main()
 		i++;
 	}
 }
- */
+*/
