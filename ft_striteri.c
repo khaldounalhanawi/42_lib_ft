@@ -10,12 +10,12 @@ static int	str_len(char *s)
 
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int				len;
+	unsigned int	len;
 	unsigned int	counter;
 
 	if (!s || !f)
 		return;
-	len = str_len (s);
+	len = (unsigned int) str_len (s);
 	if (len == 0)
 		return;
 	counter = 0;

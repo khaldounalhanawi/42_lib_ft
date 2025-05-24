@@ -115,7 +115,7 @@ int main ()
     // char s[] = "       hey there";
     // char c = ' ';
 
-    // char s[] = "e"; //**** 	QUESTION?! empty string?? should?
+    // char s[] = "e"; //	QUESTION?! empty string?? should?
     // char c = 'e';
 
     // char s[] = "  ";

@@ -30,7 +30,7 @@ int	ft_atoi(const char *str)
 
 	sign = minus_check(&str);
 	len = 0;
-	while (str[len] && str[len] >= '0' && str[len] <= '9' 
+	while ((str[len] && str[len] >= '0' && str[len] <= '9') 
 		|| str[len] == ' ' || str[len] == '+'
 		|| (str[len] >= 9 && str[len] <= 13))
 		len++;
