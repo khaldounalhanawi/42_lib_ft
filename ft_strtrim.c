@@ -11,6 +11,17 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
+
+static int	str_len(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
+}
 
 static int	isin(char a, char *b)
 {
@@ -23,62 +34,67 @@ static int	isin(char a, char *b)
 	return (0);
 }
 
-static int	len_trimmed(char const *s1, char const *set)
+static char	*sliders(char const *s1, char const *set)
 {
-	int	len;
+	int		last;
+	char	*new;
 
-	len = 0;
-	while (*s1)
-	{
-		if (!isin(*s1, (char *) set))
-			len++;
+	while (isin(*s1, (char *)set))
 		s1++;
+	last = str_len ((char *) s1) - 1;
+	if (last < 0)
+	{
+		new = malloc ((str_len ((char *) s1) + 1) * sizeof (char));
+		if (!new)
+			return (NULL);
+		ft_strlcpy (new, s1, (str_len ((char *) s1)));
+		return (new);
 	}
-	return (len);
+	while (isin(s1[last], (char *) set))
+		last --;
+	new = malloc ((last + 2) * sizeof(char));
+	if (!new)
+		return (NULL);
+	ft_strlcpy (new, s1, last + 2);
+	return (new);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		len;
-	char	*record;
-	char	*p;
-	char	*empty;
+	char	*new;
 
-	if (*s1 == '\0' && *set == '\0')
-	{
-		empty = malloc (sizeof (char));
-		if (!empty)
-			return (NULL);
-		*empty = '\0';	
-		return (empty);
-	}
-	len = len_trimmed(s1, set);
-	p = malloc ((len + 1) * sizeof(char));
-	if (!p)
+	if (!s1)
 		return (NULL);
-	record = p;
-	while (*s1)
+	if (*s1 == '\0')
 	{
-		if (!isin(*s1, (char *) set))
-			*p++ = *s1;
-		s1++;
+		new = malloc (1);
+		if (!new)
+			return (NULL);
+		*new = '\0';
+		return (new);
 	}
-	*p = '\0';
-	return (record);
+	if (!set || *set == '\0')
+	{
+		new = ft_strdup (s1);
+		return (new);
+	}
+	new = sliders(s1, set);
+	return (new);
 }
-/* 
+/*
 #include <stdio.h>
 
 int main()
 {
 	//char s1[] = "Hgelzloa gUgfzok!";
 	//char s2[] = "zgak";
-	
-	char s1[] = "";
+	          // 012345678 9 
+	char s1[] = " . abcd";
 	char s2[] = "";
 
-	printf("%s\n", ft_strtrim(s1, s2));
-	//printf("\n\n\n****");
+	// ft_strtrim(s1, s2);
+	printf(">%s<\n", ft_strtrim(s1, s2));
 
 	return (0);
-}*/
+}
+*/
