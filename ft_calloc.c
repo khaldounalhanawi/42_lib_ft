@@ -20,8 +20,8 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			all_bytes;
 
 	if (count == 0 || size == 0)
-		return (NULL);
-	if (count != 0 && size > SIZE_MAX / count)
+		return (malloc(1));
+	if (size > SIZE_MAX / count)
 		return (NULL);
 	all_bytes = count * size;
 	p = malloc(all_bytes);
