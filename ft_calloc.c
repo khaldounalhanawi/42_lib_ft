@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 		return (NULL);
-	if (count != 0 && size > INT_MAX / count)
+	if (count != 0 && size > SIZE_MAX / count)
 		return (NULL);
 	all_bytes = count * size;
 	p = malloc(all_bytes);
