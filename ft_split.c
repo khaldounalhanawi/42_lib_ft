@@ -11,22 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	num;
-
-	num = 0;
-	while (src[num])
-		num++;
-	if (dstsize)
-	{
-		while (--dstsize && *src)
-			*dst++ = *src++;
-		*dst = '\0';
-	}
-	return (num);
-}
+#include "libft.h"
 
 static int	get_next(char const *s, char c)
 {
@@ -85,22 +70,18 @@ static int	filler(char **origin, char **p, const char *s, int local_len)
 	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+char	**body(int words, char const *s, char c)
 {
-	int		words;
 	char	**p;
 	char	**origin;
 
-	if (!s || *s == '\0')
-		return (NULL);
-	words = word_count(s, c);
 	p = malloc ((words + 1) * sizeof (char *));
 	if (!p)
 		return (NULL);
 	origin = p;
 	while (words--)
 	{
-		while (*s == c && *s) 
+		while (*s == c && *s)
 			s++;
 		if (!filler (origin, p, s, get_next(s, c)))
 			return (NULL);
@@ -110,13 +91,36 @@ char	**ft_split(char const *s, char c)
 	*p = NULL;
 	return (origin);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	int		words;
+	char	**p;
+
+	if (!s)
+		return (NULL);
+	if (*s == '\0')
+	{
+		p = malloc (sizeof (char *));
+		if (!p)
+			return (NULL);
+		*p = NULL;
+		return (p);
+	}
+	words = word_count(s, c);
+	p = body (words, s, c);
+	return (p);
+}
 /*
 #include <stdio.h>
 
 int main ()
 {
-    char s[] = "    hey there        how are you       ";
-    char c = ' ';
+    // char s[] = "    hey there        how are you       ";
+    // char c = ' ';
+
+    char s[] = "";
+    char c = 97;
 
     // char s[] = "hhey there";
     // char c = 'h';
