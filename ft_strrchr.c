@@ -21,6 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	start = s;
 	while (*s)
 		s++;
+	if (ch == '\0')
+		return ((char *)s);
 	while (s != start)
 	{
 		if (*s == ch)
