@@ -73,7 +73,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		*new = '\0';
 		return (new);
 	}
-	if (!set || *set == '\0')
+	if (!set)
 	{
 		new = ft_strdup (s1);
 		return (new);
@@ -89,12 +89,16 @@ int main()
 	//char s1[] = "Hgelzloa gUgfzok!";
 	//char s2[] = "zgak";
 	          // 012345678 9 
-	char s1[] = " . abcd";
-	char s2[] = "";
+	//char s1[] = " . abcd";
+	//char s2[] = "";
+	
+	char s1[] = "aacacabaaacccb";
+	char s2[] = "abc";
 
+	//char s1[] = "  \t \t \n   \n\n\n\t";
+	//char s2[] = " \n\t";
 	// ft_strtrim(s1, s2);
 	printf(">%s<\n", ft_strtrim(s1, s2));
 
 	return (0);
-}
-*/
+}*/
