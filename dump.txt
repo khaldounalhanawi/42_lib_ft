@@ -1,0 +1,141 @@
+✔ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+ℹ Testing:
+ft_isalpha      : [OK] 
+ft_isdigit      : [OK] 
+ft_isalnum      : [OK] 
+ft_isascii      : [OK] 
+ft_isprint      : [OK] 
+ft_strlen       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_bzero        : [OK] [OK] [OK] [OK] 
+ft_memcpy       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memmove      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlcat      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_toupper      : [OK] 
+ft_tolower      : [OK] 
+ft_strchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strrchr      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memcmp       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strnstr      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_atoi         : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_calloc       : [OK] [OK] [OK] [OK] [OK] 
+ft_strdup       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_substr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strjoin      : [OK] [OK] [OK] [OK] [OK] 
+ft_strtrim      : [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] 
+[fail]: your strtrim does not work with full blank input
+
+ft_split        : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_itoa         : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strmapi      : [OK] [OK] [OK] [OK] [OK] 
+ft_striteri     : [OK] [OK] 
+ft_putchar_fd   : [OK] [OK] 
+ft_putstr_fd    : [OK] [OK] 
+ft_putendl_fd   : [OK] [OK] 
+ft_putnbr_fd    : [OK] [OK] [OK] [FAILED] [OK] 
+[fail]: your putnbr_fd does not work with random numbers
+
+
+[fail]: your strtrim does not work with full blank input
+ Test code:
+ 	char *s1 = "  \t \t \n   \n\n\n\t";
+ 	char *s2 = "";
+ 	char *ret = ft_strtrim(s1, " \n\t");
+ 
+ 	if (!strcmp(ret, s2))
+ 		exit(TEST_SUCCESS);
+ 	exit(TEST_FAILED);
+ 
+ Diffs:
+      strtrim: ||
+   ft_strtrim: |H_|
+ 
+ [fail]: your putnbr_fd does not work with random numbers
+ Test code:
+ 	int nbr;
+ 	char buff[0xF0];
+ 
+ 	srand(clock());
+ 	nbr = rand();
+ 	fd_to_buffer(2);
+ 	ft_putnbr_fd(nbr, 2);
+ 	write(2, "", 1);
+ 	get_fd_buffer(2, buff, 0xF0);
+ 	int nb = atoi(buff);
+ 	if (nbr != nb)
+ 	{
+ 		exit(TEST_FAILED);
+ 	}
+ 	;
+ 	srand(clock());
+ 	nbr = rand();
+ 	fd_to_buffer(2);
+ 	ft_putnbr_fd(nbr, 2);
+ 	write(2, "", 1);
+ 	get_fd_buffer(2, buff, 0xF0);
+ 	if (nbr != atoi(buff))
+ 	{
+ 		exit(TEST_FAILED);
+ 	}
+ 	;
+ 	srand(clock());
+ 	nbr = rand();
+ 	fd_to_buffer(2);
+ 	ft_putnbr_fd(nbr, 2);
+ 	write(2, "", 1);
+ 	get_fd_buffer(2, buff, 0xF0);
+ 	if (nbr != atoi(buff))
+ 	{
+...
+
+File too large. To see full report open: /home/kalhanaw/francinette/temp/libft/alelievr/result.log
+
+✔ Compiling tests: fsoares (my own)
+ℹ Testing:
+ft_isalpha      : OK
+ft_isdigit      : OK
+ft_isalnum      : OK
+ft_isascii      : OK
+ft_isprint      : OK
+ft_strlen       : OK
+ft_memset       : OK
+ft_bzero        : OK
+ft_memcpy       : OK
+ft_memmove      : OK
+ft_strlcpy      : OK
+ft_strlcat      : OK
+ft_toupper      : OK
+ft_tolower      : OK
+ft_strchr       : OK
+ft_strrchr      : OK
+ft_strncmp      : OK
+ft_memchr       : OK
+ft_memcmp       : OK
+ft_strnstr      : OK
+ft_atoi         : OK
+ft_calloc       : OK
+ft_strdup       : OK
+ft_substr       : OK
+ft_strjoin      : OK
+ft_strtrim      : OK
+ft_split        : OK
+ft_itoa         : OK
+ft_strmapi      : OK
+ft_striteri     : OK
+ft_putchar_fd   : OK
+ft_putstr_fd    : OK
+ft_putendl_fd   : OK
+ft_putnbr_fd    : OK
+
+Want some more thorough tests? run 'francinette --strict'.
+
+Summary: no bonus
+
+Failed tests: strtrim, putnbr_fd
+
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, memcpy, memmove, strlcpy, strlcat, toupper, tolower, strchr, strrchr, strncmp, memchr, memcmp, strnstr, atoi, calloc, strdup, substr, strjoin, split, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd
+c4b2c2% 
+
