@@ -17,10 +17,10 @@ OBJS = ft_strnstr.o ft_isdigit.o ft_putstr_fd.o ft_strlcpy.o ft_strlen.o \
 	ft_strdup.o ft_atoi.o ft_isalnum.o ft_itoa.o ft_tolower.o
 	
 BFILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c
+	ft_lstdelone.c ft_lstclear.c
 
 BOBJS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o \
-	ft_lstdelone.o
+	ft_lstdelone.o ft_lstclear.o
 
 all: $(NAME)
 
