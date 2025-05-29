@@ -15,6 +15,10 @@ OBJS = ft_strnstr.o ft_isdigit.o ft_putstr_fd.o ft_strlcpy.o ft_strlen.o \
 	ft_strrchr.o ft_isalpha.o ft_memchr.o ft_putchar_fd.o ft_memset.o ft_substr.o \
 	ft_strncmp.o ft_strmapi.o ft_strtrim.o ft_memmove.o ft_strlcat.o ft_calloc.o \
 	ft_strdup.o ft_atoi.o ft_isalnum.o ft_itoa.o ft_tolower.o
+	
+BFILES = ft_lstnew.c ft_lstadd_front.c
+
+BOBJS = ft_lstnew.o ft_lstadd_front.o
 
 all: $(NAME)
 
@@ -25,11 +29,14 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(BOBJS)
+	ar rcs $(NAME) $(OBJS) $(BOBJS)
+
+.PHONY: all clean fclean re bonus
