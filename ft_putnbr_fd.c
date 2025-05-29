@@ -42,22 +42,21 @@ void	ft_putnbr_fd(int n, int fd)
 		m = m * (-1);
 	}
 	devider = devider_cal (m);
-	while (m >= 10)
+	while (devider > 0)
 	{
 		out = (m / devider) + '0';
 		ft_putchar_fd(out, fd);
 		m %= devider;
 		devider /= 10;
 	}
-	out = (m % 10) + '0';
-	ft_putchar_fd(out, fd);
 }
 /*
 # include <limits.h>
 int main()
 {
 
-	int a = INT_MIN;
+	// int a = INT_MIN;
+	int a = 1005;
 	// int a = 0;
 	// int a = 10;
 	// int a = INT_MAX;
@@ -67,4 +66,5 @@ int main()
 	ft_putnbr_fd(a, 1);
 
 
-}*/
+}
+*/
