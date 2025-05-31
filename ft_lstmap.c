@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 12:12:08 by kalhanaw          #+#    #+#             */
+/*   Updated: 2025/05/31 12:12:19 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-static void *ft_lstclear2(t_list **lst, void (*del)(void*))
+static void	*ft_lstclear2(t_list **lst, void (*del)(void*))
 {
 	t_list	*record;
 	t_list	*cur;
